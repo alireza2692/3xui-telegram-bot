@@ -3,7 +3,7 @@ set -e
 REPO_URL="https://github.com/alireza2692/3xui-telegram-bot.git"
 BRANCH="main"
 
-BOT_DIR="/opt/telegram-bot"
+BOT_DIR="/opt/vpn-bot"
 
 C_GREEN='\033[0;32m'
 C_YELLOW='\033[1;33m'
