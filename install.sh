@@ -1,5 +1,10 @@
 set -e
 
+REPO_URL="https://github.com/alireza2692/3xui-telegram-bot.git"
+BRANCH="main"
+
+BOT_DIR="/opt/telegram-bot"
+
 C_GREEN='\033[0;32m'
 C_YELLOW='\033[1;33m'
 C_RED='\033[0;31m'
@@ -58,17 +63,32 @@ echo "======================================================"
 echo "   Nex1Shield VPN Bot - Installer"
 echo "======================================================"
 echo ""
-ask_optional "Install directory [default: /root/bot]" "/root/bot" BOT_DIR
+
+if ! command -v git >/dev/null 2>&1; then
+    apt-get update
+    apt-get install -y git
+fi
 
 if [ -d "$BOT_DIR" ]; then
-    warn "Directory $BOT_DIR already exists."
-    ask_yesno "Continue and overwrite files in it?" CONFIRM
+    warn "Directory $BOT_DIR already exists and may be overwritten."
+    ask_yesno "Continue?" CONFIRM
     if [ "$CONFIRM" != "y" ]; then
         err "Installation cancelled."
         exit 1
     fi
 fi
-mkdir -p "$BOT_DIR"
+
+if [ -d "$BOT_DIR/.git" ]; then
+    info "Updating source..."
+    cd "$BOT_DIR"
+    git pull origin "$BRANCH"
+else
+    info "Downloading source..."
+    rm -rf "$BOT_DIR"
+    git clone -b "$BRANCH" --depth 1 "$REPO_URL" "$BOT_DIR"
+fi
+
+cd "$BOT_DIR"
 echo ""
 info "Setup mode"
 echo "  1) Fresh install - answer all questions from scratch"
