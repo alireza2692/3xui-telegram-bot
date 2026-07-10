@@ -1,5 +1,5 @@
 set -e
-REPO_URL="https://github.com/USERNAME/REPO_NAME.git"
+REPO_URL="https://github.com/alireza2692/3xui-telegram-bot.git"
 REPO_BRANCH="main"
 
 C_GREEN='\033[0;32m'
