@@ -58,7 +58,7 @@ fi
 
 echo ""
 echo "======================================================"
-echo "   Nex1Shield VPN Bot - Installer"
+echo "   3xui telegram bot - Installer"
 echo "======================================================"
 echo ""
 ask_optional "Install directory [default: /root/bot]" "/root/bot" BOT_DIR
