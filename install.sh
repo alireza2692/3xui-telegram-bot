@@ -283,7 +283,7 @@ PYEOF
     CARDS=""
     for ((i=1; i<=CARD_COUNT; i++)); do
         echo ""
-        echo "--- Card
+        echo "--- Card #$i ---"
         ask_required "Card number" CARD_NUM
         ask_required "Cardholder name" CARD_NAME
         if [ -z "$CARDS" ]; then
