@@ -105,7 +105,7 @@ vpn-bot start | stop | restart | status | logs | backup | restore | health
 فقط این یک دستور را در ترمینال سرور خود اجرا کنید:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/USERNAME/REPO_NAME/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/alireza2692/3xui-telegram-bot/main/install.sh)
 ```
 
 > جای `USERNAME/REPO_NAME` را با آدرس مخزن گیت‌هاب خودتان جایگزین کنید.
