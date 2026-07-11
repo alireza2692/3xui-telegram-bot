@@ -73,7 +73,7 @@ if [ "$RESTORE_MODE" == "n" ]; then
     echo ""
     info "Telegram bot info"
     ask_required "Bot token (BOT_TOKEN)" BOT_TOKEN
-    ask_required "Admin numeric IDs (comma-separated)" ADMIN_IDS
+    ask_required "Admin numeric IDs (from @userinfobot,comma-separated, e.g. 123,456)" ADMIN_IDS
     ask_required "Support Username (@support)" SUPPORT
 
     echo ""
@@ -89,8 +89,8 @@ if [ "$RESTORE_MODE" == "n" ]; then
 
     echo ""
     info "3X-UI Panel info"
-    ask_required "Panel URL with port" PANEL_URL
-    ask_required "Panel path (webBasePath)" PANEL_PATH
+    ask_required "Panel URL with https and port - no trailing slash (e.g. https://example.com:2053)" PANEL_URL
+    ask_required "Panel path (webBasePath) - starts with /, no trailing slash" PANEL_PATH
     ask_required "Panel API token" PANEL_API_TOKEN
     ask_required "Subscription base URL" SUB_BASE_URL
     PANEL_URL="${PANEL_URL%/}"
