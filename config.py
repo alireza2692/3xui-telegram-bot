@@ -57,6 +57,7 @@ def _parse_cards(raw: str) -> List[Tuple[str, str]]:
 @dataclass
 class Config:
     bot_token: str = field(default_factory=lambda: os.environ["BOT_TOKEN"])
+    support: str = field(default_factory=lambda: os.environ["SUPPORT"])
     admin_ids: List[int] = field(default_factory=lambda: _int_list(os.getenv("ADMIN_IDS", "")))
 
     required_channel_id: int = field(default_factory=lambda: int(os.getenv("REQUIRED_CHANNEL_ID", "0")))
