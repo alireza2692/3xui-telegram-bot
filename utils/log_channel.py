@@ -95,7 +95,7 @@ async def log_referral_bonus(bot, inviter_id: int, inviter_username: str,
                               invitee_id: int, amount: int, bonus: int) -> None:
     await send_log(bot,
         f"🎁 <b>پاداش دعوت</b>\n\n"
-        f"👤 دعوت‌کننده: <code>{inviter_id}</code> @{inviter_username or "—"}\n"
+        f"👤 دعوت‌کننده: <code>{inviter_id}</code> @{inviter_username or '—'}\n"
         f"👤 دعوت‌شده: <code>{invitee_id}</code>\n"
         f"💰 مبلغ شارژ: {amount:,} تومان\n"
         f"🎁 پاداش ۱۰٪: {bonus:,} تومان"
