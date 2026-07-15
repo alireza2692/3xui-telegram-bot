@@ -134,7 +134,7 @@ async def renew_gb(message: Message, state: FSMContext) -> None:
     await state.set_state(RenewSt.confirm)
     breakdown = await price_breakdown(gb)
     await message.answer(
-        f"🔁 <b>جزئیات تمدید</b>\n\n📧 سرویس: <code>{data["email"]}</code>\n{breakdown}\n\nتایید؟",
+        f"🔁 <b>جزئیات تمدید</b>\n\n📧 سرویس: <code>{data['email']}</code>\n{breakdown}\n\nتایید؟",
         reply_markup=confirm_renew_kb(), parse_mode="HTML",
     )
 
